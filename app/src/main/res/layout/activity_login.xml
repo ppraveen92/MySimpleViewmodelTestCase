@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginviewmodel"
+            type="com.example.junittestapp.viewmodel.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginn_bottom_20"
+                android:layout_marginRight="@dimen/marginn_bottom_20"
+                android:hint="@string/testing_with_livedata"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:text="@={loginviewmodel.edittext}"
+                android:textColor="@color/black"
+                android:theme="@style/MyEditTextTheme" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginn_bottom_20"
+                android:layout_marginRight="@dimen/marginn_bottom_20"
+                android:hint="@string/username"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:text="@{loginviewmodel.username}"
+                android:textColor="@color/black"
+                android:theme="@style/MyEditTextTheme" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginn_bottom_20"
+                android:layout_marginRight="@dimen/marginn_bottom_20"
+                android:layout_marginBottom="@dimen/marginn_10"
+                android:hint="@string/password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:text="@{loginviewmodel.pass}"
+                android:textColor="@color/black"
+                android:theme="@style/MyEditTextTheme" />
+
+            <Button
+                android:id="@+id/btn_userlogin"
+                android:layout_width="@dimen/width_200"
+                android:layout_height="@dimen/height_50"
+                android:layout_marginBottom="@dimen/marginn_10"
+                android:background="@drawable/button_blue_select"
+                android:gravity="center"
+                android:onClick="@{loginviewmodel.updateUserName}"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text='@{loginviewmodel.username,default="Username"}'
+                android:textColor="@color/stylish_red"
+                android:textSize="@dimen/button_text_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text='@{loginviewmodel.pass,default="Password"}'
+                android:textColor="@color/orangeKightColor"
+                android:textSize="@dimen/button_text_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text='@{loginviewmodel.status,default="Status"}'
+                android:textColor="@color/stylish_red"
+                android:textSize="@dimen/button_text_20"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

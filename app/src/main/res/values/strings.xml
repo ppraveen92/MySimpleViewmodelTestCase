@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MVVMDATABINDING</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="testing_with_livedata">Test With Live Data</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">L O G I N</string>
+</resources>
